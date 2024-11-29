@@ -4,11 +4,12 @@ const GlobalStyle = createGlobalStyle`
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; font-family: Inter, sans-serif;
 }
 
 body{
     background-color: #1b1b1b;
+   
 }
 
 button{
