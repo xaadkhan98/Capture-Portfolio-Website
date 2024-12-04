@@ -5,6 +5,7 @@ import { About, Hide, Description, Image } from "../styles";
 // Motion
 import { motion } from "motion/react";
 import { titleAnim, pageAnimation, fade, photoAnim } from "../animation";
+import Wave from "./Wave";
 
 const AboutSection = () => {
   return (
@@ -33,6 +34,7 @@ const AboutSection = () => {
         <Image>
           <motion.img variants={photoAnim} src={home1} alt="" />
         </Image>
+        <Wave />
       </About>
     </motion.div>
   );
