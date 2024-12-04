@@ -1,4 +1,4 @@
-import { easeInOut, stagger } from "framer-motion";
+import { easeInOut, easeOut, stagger } from "framer-motion";
 
 export const pageAnimation = {
   hidden: {
@@ -10,7 +10,7 @@ export const pageAnimation = {
     y: 0,
 
     transition: {
-      duration: 1,
+      duration: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
@@ -46,4 +46,39 @@ export const photoAnim = {
     scale: 1,
     transition: { duration: 0.75, ease: "easeOut" },
   },
+};
+
+export const lineAnim = {
+  hidden: {
+    width: "0%",
+  },
+  show: {
+    width: "100%",
+    transition: {
+      duration: 1.2,
+      ease: easeInOut,
+    },
+  },
+};
+
+export const slider = {
+  hidden: {
+    x: "-130%",
+    skew: "45deg",
+  },
+  show: {
+    x: "100%",
+    skew: "0deg",
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const sliderContainer = {
+  hidden: {
+    opacity: 1,
+  },
+  show: { opacity: 1, transition: { duration: 0.5, staggerChildren: 0.1 } },
 };
