@@ -13,9 +13,11 @@ import {
   slider,
   sliderContainer,
 } from "../animation";
-import { style } from "framer-motion/client";
+import { useScroll } from "../components/useScroll";
 
 const OurWork = () => {
+  const [controls, element] = useScroll();
+  const [controlsTwo, elementsTwo] = useScroll();
   return (
     <Work
       variants={pageAnimation}
@@ -39,16 +41,16 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element} variants={fade} animate={controls}>
         <h2>The Raacer</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theRacer} alt="theRacer" />
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={elementsTwo} variants={fade} animate={controlsTwo}>
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodTimes} alt="goodTimes" />
         </Link>
@@ -63,7 +65,7 @@ const Work = styled(motion.div)`
   overflow: hidden;
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   h2 {
     padding: 1rem 0;
